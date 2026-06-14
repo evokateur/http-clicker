@@ -24,6 +24,11 @@ uv run server.py
 
 When you see "Uvicorn running on <http://0.0.0.0:8000>", the app will be available at `http://<hostname>.local:8000/`.
 
+>[!important]
+>macOS may ask to allow access to devices on the local network the first time the server runs.
+>
+>This can happen separately for the terminal in which you ran `uv run server.py` or for `uv` with the `install-launchd.sh` managed process.
+
 Stop the server with Ctrl-C
 
 ### Install launch daemon
@@ -37,3 +42,12 @@ To install it as a background service that starts on login and restarts itself i
 If it stops responding, double-click `restart-launchd.command`.
 
 To remove the background service: `./uninstall-launchd.sh`.
+
+## Logs
+
+`launchd` writes stdout and stderr to `launchd.log` in the project
+directory:
+
+```sh
+tail -f launchd.log
+```
