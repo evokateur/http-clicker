@@ -6,7 +6,7 @@ A very simple (1960s simple) LG TV controller. For people who just want to watch
 
 ### TV Button
 
-Put the TV in Live (terrestrial) TV mode. Searches for and pairs TV if necessary. If paired TV is unreachable it attempts to turn it on using its MAC (stored in pairing process).
+Puts the TV in Live (terrestrial) TV mode. Searches for and pairs TV if necessary. If paired TV is unreachable it attempts wake it up using its MAC.
 
 ### Channel Up/Down
 
