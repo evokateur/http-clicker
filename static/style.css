@@ -107,3 +107,20 @@ html, body {
   height: 110px;
   font-size: 2.4rem;
 }
+
+@media (orientation: landscape) {
+  .remote {
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  .channel-group {
+    flex-direction: row;
+    width: auto;
+  }
+
+  .btn-channel {
+    width: 110px;
+  }
+}
