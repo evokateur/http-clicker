@@ -15,6 +15,7 @@ SEARCH_TARGET = "urn:lge-com:service:webos-second-screen:1"
 SUBPROTOCOL = Subprotocol("com.webos.service.networkinput.client")
 
 STATE_FILE = Path(__file__).parent / ".tv-state.json"
+CHANNELS_FILE = Path(__file__).parent / ".tv-channels.json"
 
 MANIFEST = {
     "manifestVersion": 1,
@@ -25,6 +26,11 @@ MANIFEST = {
         "CONTROL_INPUT_TV",
         "CONTROL_AUDIO",
         "READ_NETWORK_STATE",
+        "READ_TV_CHANNEL_LIST",
+        "READ_INPUT_DEVICE_LIST",
+        "CONTROL_POWER",
+        "CONTROL_DISPLAY",
+        "WRITE_NOTIFICATION_TOAST",
     ],
 }
 
@@ -81,6 +87,16 @@ def load_state():
 
 def save_state(state):
     STATE_FILE.write_text(json.dumps(state, indent=2))
+
+
+def load_channels():
+    if CHANNELS_FILE.exists():
+        return json.loads(CHANNELS_FILE.read_text())
+    return []
+
+
+def save_channels(channels):
+    CHANNELS_FILE.write_text(json.dumps(channels, indent=2))
 
 
 async def connect(ip, timeout=3):
@@ -168,12 +184,12 @@ async def get_wakeup_mac(ws):
     return None
 
 
-async def channel_up(ws):
-    return await send_command(ws, "ssap://tv/channelUp")
+async def get_channel_list(ws):
+    return await send_command(ws, "ssap://tv/getChannelList")
 
 
-async def channel_down(ws):
-    return await send_command(ws, "ssap://tv/channelDown")
+async def open_channel(ws, channel_id):
+    return await send_command(ws, "ssap://tv/openChannel", {"channelId": channel_id})
 
 
 def send_magic_packet(mac):

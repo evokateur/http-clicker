@@ -29,10 +29,14 @@ document.getElementById("tv").addEventListener("pointerdown", (e) => {
 
 document.getElementById("ch-up").addEventListener("pointerdown", (e) => {
   e.preventDefault();
-  press(e.currentTarget, "/channel-up");
+  press(e.currentTarget, "/channel-up", (data) => {
+    tvStatus.textContent = data.message || " ";
+  });
 });
 
 document.getElementById("ch-down").addEventListener("pointerdown", (e) => {
   e.preventDefault();
-  press(e.currentTarget, "/channel-down");
+  press(e.currentTarget, "/channel-down", (data) => {
+    tvStatus.textContent = data.message || " ";
+  });
 });
