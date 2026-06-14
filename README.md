@@ -10,7 +10,7 @@ For people who just want to watch TV and change channels, and can't *even* with 
 
 ### TV Button
 
-Puts the TV in Live (terrestrial) TV mode. Searches for and pairs TV if necessary. If paired TV is unreachable it attempts wake it up using its MAC.
+Puts the TV in Live (terrestrial) TV mode. Searches for and pairs TV if necessary. If paired TV is unreachable it attempts to wake it up using its MAC.
 
 ### Channel Up/Down
 
