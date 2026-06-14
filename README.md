@@ -38,7 +38,7 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 uv run server.py
 ```
 
-When you see "Uvicorn running on <http://0.0.0.0:8000>", the app will be available at `http://<hostname>.local:8000/`.
+When you see "Uvicorn running on <http://0.0.0.0:8000>", the app will be available at `http://<machine-name>.local:8000/`.
 
 >[!note]
 >macOS may ask to allow access to devices on the local network the first time the server runs.
