@@ -1,4 +1,16 @@
-# http-clicker
+# The (HTTP) Clicker
+
+A very simple (1960s simple) LG TV controller. For people who just want to watch TV and change channels and can't even with an LG remote..
+
+## Functions
+
+### TV Button
+
+Put the TV in Live (terrestrial) TV mode. Searches for and pairs TV if necessary. If paired TV is unreachable it attempts to turn it on using its MAC (stored in pairing process).
+
+### Channel Up/Down
+
+If an LG TV is paired and in Live TV mode, it does exactly that.
 
 ## Setup
 
