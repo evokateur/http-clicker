@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Clicker">
+  <link rel="manifest" href="/manifest.json">
+  <title>The Clicker</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <main class="remote">
+    <div class="tv-row">
+      <button id="tv" class="btn btn-tv">TV</button>
+    </div>
+    <div class="status" id="tv-status">&nbsp;</div>
+
+    <div class="channel-group">
+      <button id="ch-up" class="btn btn-channel">CH &#9650;</button>
+      <button id="ch-down" class="btn btn-channel">CH &#9660;</button>
+    </div>
+  </main>
+
+  <audio id="click-sound" src="/static/click.wav" preload="auto"></audio>
+  <script src="/static/app.js"></script>
+</body>
+</html>

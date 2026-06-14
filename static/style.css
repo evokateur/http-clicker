@@ -1,0 +1,109 @@
+:root {
+  --body-bg: #2a2a2a;
+  --label-color: #e8ddc8;
+  --btn-face-top: #4a4a4a;
+  --btn-face-bottom: #333333;
+  --btn-shadow: #1a1a1a;
+  --tv-face-top: #c1503e;
+  --tv-face-bottom: #9a3a2c;
+  --tv-shadow: #5e2018;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  user-select: none;
+}
+
+html, body {
+  margin: 0;
+  height: 100%;
+  background: var(--body-bg);
+  color: var(--label-color);
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bold;
+  overscroll-behavior: none;
+}
+
+.remote {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8vh 8vw;
+  touch-action: manipulation;
+}
+
+.tv-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn {
+  border: none;
+  border-radius: 16px;
+  font-family: inherit;
+  letter-spacing: 0.1em;
+  color: var(--label-color);
+  background: linear-gradient(180deg, var(--btn-face-top), var(--btn-face-bottom));
+  box-shadow:
+    0 8px 0 var(--btn-shadow),
+    0 12px 18px rgba(0, 0, 0, 0.5),
+    inset 0 2px 0 rgba(255, 255, 255, 0.08);
+  transition: transform 60ms ease-out, box-shadow 60ms ease-out;
+}
+
+.btn:active {
+  transform: translateY(6px);
+  box-shadow:
+    0 2px 0 var(--btn-shadow),
+    0 4px 8px rgba(0, 0, 0, 0.5),
+    inset 0 2px 0 rgba(255, 255, 255, 0.08);
+}
+
+.btn-tv {
+  width: 56vw;
+  height: 56vw;
+  max-width: 260px;
+  max-height: 260px;
+  border-radius: 50%;
+  font-size: 2.2rem;
+  background: linear-gradient(180deg, var(--tv-face-top), var(--tv-face-bottom));
+  box-shadow:
+    0 10px 0 var(--tv-shadow),
+    0 16px 22px rgba(0, 0, 0, 0.5),
+    inset 0 3px 0 rgba(255, 255, 255, 0.15);
+}
+
+.btn-tv:active {
+  transform: translateY(8px);
+  box-shadow:
+    0 2px 0 var(--tv-shadow),
+    0 4px 10px rgba(0, 0, 0, 0.5),
+    inset 0 3px 0 rgba(255, 255, 255, 0.15);
+}
+
+.status {
+  min-height: 1.4em;
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+  opacity: 0.75;
+  text-align: center;
+}
+
+.channel-group {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+  max-width: 280px;
+}
+
+.btn-channel {
+  width: 100%;
+  height: 110px;
+  font-size: 2.4rem;
+}
