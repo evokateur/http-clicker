@@ -109,7 +109,7 @@ async def register(ws, client_key=None):
     if client_key:
         payload["client-key"] = client_key
     else:
-        print("Check your TV and accept the connection prompt...")
+        print("No client key on file, waiting for pairing confirmation from TV.")
 
     await ws.send(
         json.dumps(
