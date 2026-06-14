@@ -6,6 +6,7 @@ JSON-serializable result dicts.
 """
 
 import asyncio
+import os
 
 import lgtv
 
@@ -107,4 +108,5 @@ def get_status():
         "paired": bool(state.get("ip")),
         "ip": state.get("ip"),
         "mac": state.get("mac"),
+        "open_fds": len(os.listdir("/dev/fd")),
     }

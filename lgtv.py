@@ -43,16 +43,13 @@ def discover_tvs(timeout=5):
         ]
     )
 
-    sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-    sock.settimeout(timeout)
-    sock.sendto(msg.encode(), (SSDP_ADDR, SSDP_PORT))
-
-    try:
-        data, addr = sock.recvfrom(4096)
-    except socket.timeout:
-        return []
-    finally:
-        sock.close()
+    with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as sock:
+        sock.settimeout(timeout)
+        try:
+            sock.sendto(msg.encode(), (SSDP_ADDR, SSDP_PORT))
+            data, addr = sock.recvfrom(4096)
+        except OSError:
+            return []
 
     headers = {}
     for line in data.decode().split("\r\n")[1:]:

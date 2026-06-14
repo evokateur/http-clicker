@@ -1,6 +1,8 @@
 """LAN web server exposing TV remote controls for an LG webOS TV."""
 
 import asyncio
+import os
+from contextlib import asynccontextmanager
 from pathlib import Path
 
 from fastapi import FastAPI
@@ -11,7 +13,23 @@ import tv_control
 
 STATIC_DIR = Path(__file__).parent / "static"
 
-app = FastAPI()
+FD_LOG_INTERVAL = 3600  # seconds
+
+
+async def _log_fd_count():
+    while True:
+        await asyncio.sleep(FD_LOG_INTERVAL)
+        print(f"open file descriptors: {len(os.listdir('/dev/fd'))}")
+
+
+@asynccontextmanager
+async def lifespan(_app: FastAPI):
+    task = asyncio.create_task(_log_fd_count())
+    yield
+    task.cancel()
+
+
+app = FastAPI(lifespan=lifespan)
 app.mount("/static", StaticFiles(directory=STATIC_DIR), name="static")
 
 tv_lock = asyncio.Lock()
