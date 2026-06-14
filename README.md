@@ -1,6 +1,6 @@
 # The (HTTP) Clicker
 
-A VERY simple LG TV controller. 
+A VERY simple LG TV controller.
 
 For people who just want to watch TV and change channels, and can't *even* with an LG remote..
 
@@ -20,17 +20,17 @@ If an LG TV is paired and in Live TV mode, it does exactly that.
 
 ### Requirements
 
-- macOS. The host Mac must be on the same network as the TV.
+A macOS machine with `uv`. The host Mac must be on the same network as the TV.
 
-- Install `uv`:
+To install `uv`:
 
 ```sh
 curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
 
-- Copy or clone this project folder onto the machine.
-
 ### Smoke test
+
+- Copy or clone this project folder onto the machine.
 
 - `cd` into the project directory and start the server:
 
@@ -55,9 +55,9 @@ To install it as a background service that starts on login and restarts itself i
 ./install-launchd.sh
 ```
 
-If it stops responding, double-click `restart-launchd.command`.
+If it stops responding, run `restart-launchd.command`
 
-To remove the background service: `./uninstall-launchd.sh`.
+To remove the background service: `./uninstall-launchd.sh`
 
 ## Logs
 
