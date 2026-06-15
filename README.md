@@ -1,6 +1,6 @@
 # The (HTTP) Clicker
 
-A VERY simple controller for people who just want to watch TV and change channel and are thwarted by their LG TV.
+A VERY simple controller for people who just want to watch TV and change channels, and are thwarted by their LG TV.
 
 <img width="224" height="500" alt="iphone-13-mini" src="https://github.com/user-attachments/assets/8d252d97-c817-4f8d-8b20-9327d747fef0" />
 
