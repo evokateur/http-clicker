@@ -1,8 +1,6 @@
 # The (HTTP) Clicker
 
-A VERY simple LG TV controller.
-
-For people who just want to watch TV and change channels, and can't *even* with an LG remote..
+A VERY simple controller for people who just want to watch TV and change channel and are thwarted by their LG TV.
 
 <img width="224" height="500" alt="iphone-13-mini" src="https://github.com/user-attachments/assets/8d252d97-c817-4f8d-8b20-9327d747fef0" />
 
@@ -10,11 +8,11 @@ For people who just want to watch TV and change channels, and can't *even* with 
 
 ### TV Button
 
-Puts the TV in Live (terrestrial) TV mode. Searches for and pairs TV if necessary. If paired TV is unreachable it attempts to wake it up using its MAC.
+Puts the TV in Live (terrestrial) TV mode. Searches for TV and initiates pairing if necessary. Wakes the TV if it's asleep.
 
 ### Channel Up/Down
 
-If an LG TV is paired and in Live TV mode, it does exactly that.
+Navigates through scanned-in terrestrial channels, avoiding "IP channels"
 
 ## Setup
 
@@ -38,26 +36,34 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 uv run server.py
 ```
 
-When you see "Uvicorn running on <http://0.0.0.0:8000>", the app will be available at `http://<machine-name>.local:8000/`.
+When you see "Uvicorn running on <http://0.0.0.0:8000>", the app should be available on the LAN at `http://{machine name}.local:8000/`.
 
 >[!note]
 >macOS may ask to allow access to devices on the local network the first time the server runs.
 >
->This can happen separately for the terminal app which `uv run server.py` ran in, or for `uv` with `install-launchd.sh`.
+>This can happen separately for the terminal app `uv run server.py` ran in and `uv` with `install-launchd.sh`.
 
 Stop the server with Ctrl-C
 
 ### Install launch daemon
 
-To install it as a background service that starts on login and restarts itself if it crashes:
+To install the server as a background service:
 
 ```sh
 ./install-launchd.sh
 ```
 
-If it stops responding, run `restart-launchd.command`
+To restart:
 
-To remove the background service: `./uninstall-launchd.sh`
+```sh
+./restart-launchd.command
+```
+
+To remove: 
+
+```sh
+./uninstall-launchd.sh
+```
 
 ## Logs
 
