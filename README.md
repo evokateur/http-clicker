@@ -18,7 +18,16 @@ Navigates through scanned-in terrestrial channels, avoiding "IP channels"
 
 ### Requirements
 
-A macOS machine with `uv`. The host Mac must be on the same network as the TV.
+- An LG TV (tested on LR600BZUC / webOS 8.5)
+- A macOS machine with `uv`. The host Mac must be on the same network as the TV.
+
+The TV needs the following enabled:
+
+- SDDP
+- Network IP Control
+- Wake on LAN (WoL)
+
+Menu paths may vary. On webOS 8.5 I found them via **Settings** -> **Support** -> **IP Control Settings**
 
 To install `uv`:
 
@@ -41,7 +50,7 @@ When you see "Uvicorn running on <http://0.0.0.0:8000>", the app should be avail
 >[!note]
 >macOS may ask to allow access to devices on the local network the first time the server runs.
 >
->This should happen separately for the terminal `uv run server.py` ran in, and for `uv` with `install-launchd.sh`.
+>This should happen separately for the terminal `uv run server.py` ran in, and for `uv` itself with `install-launchd.sh`.
 
 Stop the server with Ctrl-C
 
