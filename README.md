@@ -41,7 +41,7 @@ When you see "Uvicorn running on <http://0.0.0.0:8000>", the app should be avail
 >[!note]
 >macOS may ask to allow access to devices on the local network the first time the server runs.
 >
->This can happen separately for the terminal app `uv run server.py` ran in and `uv` with `install-launchd.sh`.
+>This should happen separately for the terminal `uv run server.py` ran in, and for `uv` with `install-launchd.sh`.
 
 Stop the server with Ctrl-C
 
