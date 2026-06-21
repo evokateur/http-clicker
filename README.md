@@ -1,6 +1,6 @@
 # The (HTTP) Clicker
 
-A very simple LG TV controller, for those whose ability watch TV and change channels is thwarted by their LG TV's interface.
+A very simple LG TV controller, for those whose ability watch TV (as one does) is thwarted by the WTF of the LG TV UI.
 
 <img width="250" height="420" alt="BD_4_FE_2_A6_74_C6_43_D6_9_AAE_A778_C793_DF_7_E" src="https://github.com/user-attachments/assets/ed1ef83a-04b7-4c82-ac7b-7e02a33787e2" />
 
@@ -12,7 +12,7 @@ Puts the TV in Live (terrestrial) TV mode, using SDDP discovery to initiate pair
 
 ### Channel Up/Down
 
-Cycles through scanned terrestrial channels, only, avoiding "IP channels"
+Cycles through scanned terrestrial channels, avoiding "IP channels"
 
 ## Setup
 
